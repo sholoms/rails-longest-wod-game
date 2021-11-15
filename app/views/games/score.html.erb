@@ -1,0 +1,12 @@
+<h1>Result</h1>
+<p><%= @message %></p>
+<p>Score: <%= @score %></p>
+
+<ol >
+  <% session[:scores].each do |l| %>
+    <li><%= l %></li>
+  <% end %>
+</ol>
+  <p>Total: <%= session[:scores].sum %></p>
+
+<%= link_to "Play again", game_path %>

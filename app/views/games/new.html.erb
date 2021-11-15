@@ -1,0 +1,13 @@
+<h1>New Game</h1>
+<ul >
+  <% @letters.each do |l| %>
+    <li style="display: inline"><%= l %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name = word>
+  <input type="hidden" name="grid" value="<%= @letters.join %>">
+  <input type="submit" value="play">
+</form>
